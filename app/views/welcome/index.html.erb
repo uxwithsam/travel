@@ -1,0 +1,29 @@
+<h1>Welcome to my Travel Site</h1>
+<p>This is my very awesome travel site.</p>
+
+<p>My hometown is <%= @homeland %></p> 
+<!-- This is all Ruby now, so we can also do stuff like homeland.upcase etc-->
+
+<ul>
+<% @countries.each do |country| %>
+  <li><%= country %>
+<% end %> 
+</ul>
+<!-- from a Ruby perspective, my array is called 'countries' . each and then do... and then we give it the variable and say 'end'...so that's the syntax for this basically. And as I iterate through this, I need to 'puts' the actual countries down... so now that we're not in Ruby and we're in Rails, we have to tell it it's Rails...so we have to surround it all with percent signs %. The stuff in the '< %' we don't want people to see-->
+<!-- every line of Ruby needs its own brackets...-->
+<!-- embedded ruby means that there's HTML to use. So we can surround the ruby stuff with HTML tags...like ul and ol and all that for unordered and ordered lists-->
+
+
+<!-- the id and class have to do with css. It has an id of chile and a class of country, so I can edit those things in css-->
+
+
+<!-- < %= image_tag "chile.jpg", alt: "Santiago",
+                          id: "chile",
+                          class: "country",
+                          height: 300,
+                          width: 400 % > this was the code I used previously to get an image in, instead of the array and .each below-->
+
+<% @images.each do |image| %>
+ <%= image_tag image, class: "img-fluid" %>
+  <% end %>
+
